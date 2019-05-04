@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="horizontal"
+    android:baselineAligned="false">
+
+    <LinearLayout
+        android:id="@+id/detailsLabels"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            style="@style/DetailsText"
+            android:text="@string/label_price"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            style="@style/DetailsText"
+            android:text="@string/label_volume"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            style="@style/DetailsText"
+            android:text="@string/label_open"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            style="@style/DetailsText"
+            android:text="@string/label_high"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            style="@style/DetailsText"
+            android:text="@string/label_low"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/detailsValues"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvDetailsPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/DetailsText"
+            tools:text="$ 3999.99"/>
+
+        <TextView
+            android:id="@+id/tvDetailsVolume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/DetailsText"
+            tools:text="$ 3999.99"/>
+
+        <TextView
+            android:id="@+id/tvDetailsOpen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/DetailsText"
+            tools:text="$ 3999.99"/>
+
+        <TextView
+            android:id="@+id/tvDetailsHigh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/DetailsText"
+            tools:text="$ 3999.99"/>
+
+        <TextView
+            android:id="@+id/tvDetailsLow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/DetailsText"
+            tools:text="$ 3999.99"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Cryptoid</string>
+    <string name="usd">USD</string>
+    <string name="eur">EUR</string>
+    <string name="rub">RUB</string>
+    <string name="label_price">Price</string>
+    <string name="label_volume">Volume 24h</string>
+    <string name="label_open">Open 24h</string>
+    <string name="label_high">High 24h</string>
+    <string name="label_low">Low 24h</string>
+    <string name="error_message">Could not load data…</string>
+    <string name="error_smile">¯\\_(ツ)_/¯</string>
+</resources>

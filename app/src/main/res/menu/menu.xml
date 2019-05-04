@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/currencyUSD"
+        android:title="@string/usd"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/currencyEUR"
+        android:title="@string/eur"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/currencyRUB"
+        android:title="@string/rub"
+        app:showAsAction="never" />
+
+</menu>
