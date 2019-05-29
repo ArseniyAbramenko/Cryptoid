@@ -19,13 +19,10 @@ class CoinsAdapter(private val onItemClick: (String) -> Unit)
             .inflate(R.layout.list_item_coin, parent, false)
             .let { CoinViewHolder(it) }
 
-    override fun onBindViewHolder(holder: CoinViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CoinViewHolder, position: Int) =
         holder.bind(coins[position], onItemClick)
-    }
 
-    override fun getItemCount(): Int {
-        return coins.size
-    }
+    override fun getItemCount() = coins.size
 
     fun updateData(data: List<CoinPresentation>) {
         coins.clear()
@@ -41,10 +38,7 @@ class CoinsAdapter(private val onItemClick: (String) -> Unit)
                 tvFullName.text = coin.fullName
                 tvPrice.text = coin.price
 
-                Picasso.with(image.context)
-                    .load(coin.imageUrl)
-                    .fit()
-                    .into(image)
+                Picasso.with(image.context).load(coin.imageUrl).fit().into(image)
 
                 itemView.setOnClickListener { onItemClick(coin.shortName) }
             }
