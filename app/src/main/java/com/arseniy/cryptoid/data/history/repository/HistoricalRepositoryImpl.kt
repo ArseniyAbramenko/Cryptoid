@@ -1,6 +1,7 @@
 package com.arseniy.cryptoid.data.history.repository
 
 import com.arseniy.cryptoid.data.currency.SharedPrefsCurrencyDataSource
+import com.arseniy.cryptoid.domain.common.ResultWrapper
 import com.arseniy.cryptoid.domain.history.HistoricalData
 import com.arseniy.cryptoid.domain.history.HistoricalRepository
 import io.reactivex.Single
@@ -14,10 +15,13 @@ class HistoricalRepositoryImpl @Inject constructor(
     private val sharedPrefsCurrencyDataSource: SharedPrefsCurrencyDataSource
 ) : HistoricalRepository {
 
-    override fun get(coinName: String): Single<List<HistoricalData>> {
+    override fun get(coinName: String): Single<ResultWrapper<List<HistoricalData>>> {
         val prefsCurrency = sharedPrefsCurrencyDataSource.get()
         return networkHistoricalDataSource.get(coinName, prefsCurrency)
-            .doOnSuccess(dbHistoricalDataSource::update)
-            .onErrorResumeNext { dbHistoricalDataSource.get(coinName, prefsCurrency) }
+            .map { ResultWrapper(it) }
+            .doOnSuccess { dbHistoricalDataSource.update(it.data) }
+            .onErrorResumeNext { throwable ->
+                dbHistoricalDataSource.get(coinName, prefsCurrency).map { ResultWrapper(it, throwable) }
+            }
     }
 }

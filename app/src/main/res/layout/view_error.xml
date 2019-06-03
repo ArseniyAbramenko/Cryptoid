@@ -29,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="@+id/tvErrorSmile"
         app:layout_constraintStart_toStartOf="@+id/tvErrorSmile"
         app:layout_constraintTop_toTopOf="@+id/guideline"
-        android:text="@string/error_message"/>
+        android:text="@string/error_no_data"/>
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"

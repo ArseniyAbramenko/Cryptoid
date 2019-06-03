@@ -22,7 +22,7 @@ const val CHART_LABEL = ""
 
 fun LineChart.setUp(historicalData: List<HistoricalData>) {
     if (historicalData.isNullOrEmpty()) {
-        setNoDataText(context.getString(R.string.error_message))
+        setNoDataText(context.getString(R.string.error_no_data))
         setNoDataTextColor(R.color.colorPrimaryDark)
         getPaint(Chart.PAINT_INFO).textSize = 64f
         return
@@ -75,6 +75,7 @@ private class CustomMarkerView(context: Context, layoutResource: Int, private va
     private var offsetPoint = MPPointF.getInstance(-width.toFloat(), -height.toFloat() / 2)
 
     private var wasLeft = false
+
     override fun refreshContent(entry: Entry, highlight: Highlight?) {
         tvMarker.text = "Close: ${entry.y.toString()}"
         if (entry.x < medianTimestamp) {

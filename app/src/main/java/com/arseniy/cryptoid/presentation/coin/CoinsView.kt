@@ -5,10 +5,12 @@ import com.arellomobile.mvp.viewstate.strategy.SkipStrategy
 import com.arellomobile.mvp.viewstate.strategy.StateStrategyType
 import com.arseniy.cryptoid.presentation.common.BaseView
 
+@StateStrategyType(AddToEndSingleStrategy::class)
 interface CoinsView : BaseView {
 
-    @StateStrategyType(AddToEndSingleStrategy::class)
     fun showCoins(coins: List<CoinPresentation>)
+
+    fun showNoDataError()
 
     @StateStrategyType(SkipStrategy::class)
     fun openChart(coinName: String)

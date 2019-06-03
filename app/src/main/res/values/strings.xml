@@ -8,6 +8,7 @@
     <string name="label_open">Open 24h</string>
     <string name="label_high">High 24h</string>
     <string name="label_low">Low 24h</string>
-    <string name="error_message">Could not load data…</string>
+    <string name="error_network">Could not load data from network…</string>
+    <string name="error_no_data">Sorry, no data to display…</string>
     <string name="error_smile">¯\\_(ツ)_/¯</string>
 </resources>

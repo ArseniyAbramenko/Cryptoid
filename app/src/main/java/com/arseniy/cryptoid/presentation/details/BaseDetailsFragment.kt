@@ -5,7 +5,7 @@ import com.arseniy.cryptoid.presentation.common.BaseMvpFragment
 import com.arseniy.cryptoid.presentation.common.BaseView
 import com.arseniy.cryptoid.presentation.common.RefreshOwner
 import com.arseniy.cryptoid.presentation.common.Refreshable
-import org.jetbrains.anko.toast
+import org.jetbrains.anko.longToast
 
 abstract class BaseDetailsFragment<V : BaseView> : BaseMvpFragment<V>(), BaseView, Refreshable {
 
@@ -28,7 +28,7 @@ abstract class BaseDetailsFragment<V : BaseView> : BaseMvpFragment<V>(), BaseVie
         refreshOwner.setRefreshState(false)
     }
 
-    override fun showError() {
-        activity?.toast(R.string.error_message)
+    override fun showNetworkError() {
+        activity?.longToast(getString(R.string.error_network))
     }
 }

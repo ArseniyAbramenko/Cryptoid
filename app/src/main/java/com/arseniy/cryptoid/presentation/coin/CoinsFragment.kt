@@ -18,6 +18,7 @@ import com.arseniy.cryptoid.presentation.details.BaseDetailsFragment.Companion.C
 import com.arseniy.cryptoid.presentation.details.DetailsActivity
 import kotlinx.android.synthetic.main.fragment_coins.*
 import kotlinx.android.synthetic.main.view_error.*
+import org.jetbrains.anko.longToast
 import javax.inject.Inject
 
 class CoinsFragment : BaseMvpFragment<CoinsView>(), CoinsView, Refreshable {
@@ -102,8 +103,12 @@ class CoinsFragment : BaseMvpFragment<CoinsView>(), CoinsView, Refreshable {
         refreshOwner.setRefreshState(false)
     }
 
-    override fun showError() {
+    override fun showNoDataError() {
         recyclerView.visibility = View.GONE
         errorView.visibility = View.VISIBLE
+    }
+
+    override fun showNetworkError() {
+        activity?.longToast(getString(R.string.error_network))
     }
 }
